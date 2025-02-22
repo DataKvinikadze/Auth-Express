@@ -11,7 +11,7 @@ const userSchema = mongoose.Schema({
     password: {
         type: String
     },
-    posts: {type: [mongoose.Schema.Types.ObjectId], ref: "expenses", default: []}
+    expenses: {type: [mongoose.Schema.Types.ObjectId], ref: "expenses", default: []}
 })
 
 module.exports = mongoose.model("user", userSchema)
