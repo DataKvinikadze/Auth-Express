@@ -10,6 +10,9 @@ const expenseSchema = mongoose.Schema({
     quantity:{
         type: Number
     },
+    user: {
+        type: mongoose.Schema.Types.ObjectId, ref: "user"
+    }
 })
 
 module.exports = mongoose.model("expense", expenseSchema)

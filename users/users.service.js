@@ -2,7 +2,7 @@ const { isValidObjectId } = require("mongoose")
 const usersModel = require("../models/users.model")
 
 const getAllUsers = async(req, res)=>{
-    const users = await usersModel.find()
+    const users = await usersModel.find().populate("expenses", "title price quantity")
     res.json(users)
 }
 
